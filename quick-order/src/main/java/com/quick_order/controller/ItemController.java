@@ -1,7 +1,6 @@
 package com.quick_order.controller;
 
 import com.quick_order.dto.AuthenticationResponse;
-import com.quick_order.dto.RegisterRequest;
 import com.quick_order.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +16,8 @@ public class ItemController {
 
     private final ItemService service;
 
-    /*@PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request) {
-        return ResponseEntity.ok(service.register(request));
+    /*@PostMapping("/add")
+    public ResponseEntity<AuthenticationResponse> register(@RequestBody AddItemRequest request) {
+        return ResponseEntity.ok(service.addItem(request));
     }*/
 }
