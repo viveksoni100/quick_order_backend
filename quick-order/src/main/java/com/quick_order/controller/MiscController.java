@@ -2,14 +2,12 @@
  * @author viveksoni100
  *
  */
-package com.quick_order.entity;
+package com.quick_order.controller;
 
 /**
  * @author viveksoni100
  *
  */
 
-public enum Role {
-    USER,
-    ADMIN
+public class MiscController {
 }

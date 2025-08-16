@@ -1,9 +1,17 @@
+/**
+ * @author viveksoni100
+ *
+ */
 package com.quick_order.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/**
+ * @author viveksoni100
+ *
+ */
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

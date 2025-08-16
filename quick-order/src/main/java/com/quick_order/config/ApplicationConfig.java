@@ -1,3 +1,7 @@
+/**
+ * @author viveksoni100
+ *
+ */
 package com.quick_order.config;
 
 import com.quick_order.repository.UserRepository;
@@ -12,6 +16,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+/**
+ * @author viveksoni100
+ *
+ */
 
 @Configuration
 @RequiredArgsConstructor

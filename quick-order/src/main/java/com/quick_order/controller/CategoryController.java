@@ -1,9 +1,11 @@
+/**
+ * @author viveksoni100
+ *
+ */
 package com.quick_order.controller;
 
 import com.quick_order.dto.AddCategoryRequest;
-import com.quick_order.dto.AddItemRequest;
 import com.quick_order.entity.Categories;
-import com.quick_order.entity.Items;
 import com.quick_order.service.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -13,6 +15,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+/**
+ * @author viveksoni100
+ *
+ */
 
 @RestController
 @RequestMapping("/api/category")

@@ -1,3 +1,7 @@
+/**
+ * @author viveksoni100
+ *
+ */
 package com.quick_order.config;
 
 import io.jsonwebtoken.Claims;
@@ -14,6 +18,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+
+/**
+ * @author viveksoni100
+ *
+ */
 
 @Service
 public class JwtService {

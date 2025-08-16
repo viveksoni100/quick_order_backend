@@ -1,3 +1,7 @@
+/**
+ * @author viveksoni100
+ *
+ */
 package com.quick_order.config;
 
 import com.quick_order.entity.Role;
@@ -7,6 +11,11 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+/**
+ * @author viveksoni100
+ *
+ */
 
 @Component
 @RequiredArgsConstructor

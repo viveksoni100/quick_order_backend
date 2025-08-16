@@ -1,3 +1,7 @@
+/**
+ * @author viveksoni100
+ *
+ */
 package com.quick_order.entity;
 
 import jakarta.persistence.*;
@@ -11,6 +15,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+
+/**
+ * @author viveksoni100
+ *
+ */
 
 @Data
 @Builder
