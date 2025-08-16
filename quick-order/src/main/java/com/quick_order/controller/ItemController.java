@@ -66,7 +66,7 @@ public class ItemController {
     @PatchMapping("/edit")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
-            summary = "Edit a new item",
+            summary = "Edit an item",
             description = "Requires USER or ADMIN role.",
             security = @SecurityRequirement(name = "bearerAuth")
     )
