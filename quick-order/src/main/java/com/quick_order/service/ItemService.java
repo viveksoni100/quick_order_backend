@@ -22,4 +22,20 @@ public class ItemService {
     public List<Items> getAllByMenuId(Integer menuId) {
         return repository.findAllByMenuIdAndIsActiveTrue(menuId);
     }
+
+    public Items getById(Integer itemId) {
+        return repository.findById(itemId).orElse(null);
+    }
+
+    public String removeById(Integer itemId) {
+        repository.deleteById(itemId);
+        return "Item removed with id: " + itemId;
+    }
+
+    public String editItem(AddItemRequest request) {
+        Items entity = request.mapToEntity();
+        entity.setId(request.getId());
+        Items updatedItem = repository.save(entity);
+        return "Item updated with id: " + updatedItem.getId();
+    }
 }

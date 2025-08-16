@@ -22,15 +22,15 @@ public class ItemController {
     @PostMapping("/add")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
-        summary = "Add a new item",
-        description = "Requires USER or ADMIN role.",
-        security = @SecurityRequirement(name = "bearerAuth")
+            summary = "Add a new item",
+            description = "Requires USER or ADMIN role.",
+            security = @SecurityRequirement(name = "bearerAuth")
     )
     public ResponseEntity<String> addItem(@RequestBody AddItemRequest request) {
         return ResponseEntity.ok(service.addItem(request));
     }
 
-    @PostMapping("/getAllByMenuId/{menuId}")
+    @GetMapping("/getAllByMenuId/{menuId}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
             summary = "Get all items by menu id",
@@ -40,4 +40,38 @@ public class ItemController {
     public ResponseEntity<List<Items>> getAllByMenuId(@PathVariable Integer menuId) {
         return ResponseEntity.ok(service.getAllByMenuId(menuId));
     }
+
+    @GetMapping("/getById/{itemId}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    @Operation(
+            summary = "Get an items by id",
+            description = "Requires USER or ADMIN role.",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
+    public ResponseEntity<Items> getById(@PathVariable Integer itemId) {
+        return ResponseEntity.ok(service.getById(itemId));
+    }
+
+    @DeleteMapping("/removeById/{itemId}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    @Operation(
+            summary = "Remove an items by id",
+            description = "Requires USER or ADMIN role.",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
+    public ResponseEntity<String> removeById(@PathVariable Integer itemId) {
+        return ResponseEntity.ok(service.removeById(itemId));
+    }
+
+    @PatchMapping("/edit")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    @Operation(
+            summary = "Edit a new item",
+            description = "Requires USER or ADMIN role.",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
+    public ResponseEntity<String> editItem(@RequestBody AddItemRequest request) {
+        return ResponseEntity.ok(service.editItem(request));
+    }
+
 }
