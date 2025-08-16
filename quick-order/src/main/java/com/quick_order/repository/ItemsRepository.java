@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ItemsRepository extends JpaRepository<Items, Integer> {
 
-    List<Items> findAllByMenuId(Integer menuId);
+    List<Items> findAllByMenuIdAndIsActiveTrue(Integer menuId);
 
 }

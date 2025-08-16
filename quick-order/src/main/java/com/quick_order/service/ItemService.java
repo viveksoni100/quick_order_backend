@@ -20,6 +20,6 @@ public class ItemService {
     }
 
     public List<Items> getAllByMenuId(Integer menuId) {
-        return repository.findAllByMenuId(menuId);
+        return repository.findAllByMenuIdAndIsActiveTrue(menuId);
     }
 }
