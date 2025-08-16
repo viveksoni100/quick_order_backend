@@ -6,6 +6,8 @@ import com.quick_order.repository.ItemsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ItemService {
@@ -15,5 +17,9 @@ public class ItemService {
     public String addItem(AddItemRequest request) {
         Items savedItem = repository.save(request.mapToEntity());
         return "Item added with id: " + savedItem.getId();
+    }
+
+    public List<Items> getAllByMenuId(Integer menuId) {
+        return repository.findAllByMenuId(menuId);
     }
 }
