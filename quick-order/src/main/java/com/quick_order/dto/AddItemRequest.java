@@ -6,9 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+import com.quick_order.utility.Constants;
+
 /**
  * @author viveksoni100
- *
  */
 @Data
 @Builder
@@ -37,7 +39,7 @@ public class AddItemRequest {
                 .price(price)
                 .ingredients(ingredients)
                 .weight(weight)
-                .image(image)
+                .image((Objects.nonNull(image) ? image : Constants.DEFAULT_IMAGE_PATH))
                 .isVeg(isVeg)
                 .isActive(isActive)
                 .build();
