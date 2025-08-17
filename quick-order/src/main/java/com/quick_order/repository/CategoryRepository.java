@@ -8,7 +8,6 @@ import java.util.List;
 
 /**
  * @author viveksoni100
- *
  */
 @Repository
 public interface CategoryRepository extends JpaRepository<Categories, Integer> {
