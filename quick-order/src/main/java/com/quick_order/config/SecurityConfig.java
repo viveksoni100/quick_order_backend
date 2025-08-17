@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.config;
 
 import lombok.RequiredArgsConstructor;
@@ -23,7 +19,6 @@ import java.util.List;
  * @author viveksoni100
  *
  */
-
 @Slf4j
 @Configuration
 @EnableWebSecurity

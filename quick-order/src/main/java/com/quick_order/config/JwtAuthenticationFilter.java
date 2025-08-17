@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.config;
 
 import jakarta.servlet.FilterChain;
@@ -24,7 +20,6 @@ import java.io.IOException;
  * @author viveksoni100
  *
  */
-
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {

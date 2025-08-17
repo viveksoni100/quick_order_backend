@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.config;
 
 import com.quick_order.repository.UserRepository;
@@ -21,7 +17,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @author viveksoni100
  *
  */
-
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {

@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.repository;
 
 import com.quick_order.entity.Items;
@@ -14,7 +10,6 @@ import java.util.List;
  * @author viveksoni100
  *
  */
-
 @Registered
 public interface ItemsRepository extends JpaRepository<Items, Integer> {
 

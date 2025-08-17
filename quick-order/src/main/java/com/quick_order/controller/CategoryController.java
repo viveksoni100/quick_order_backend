@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.controller;
 
 import com.quick_order.dto.AddCategoryRequest;
@@ -20,7 +16,6 @@ import java.util.List;
  * @author viveksoni100
  *
  */
-
 @RestController
 @RequestMapping("/api/category")
 @RequiredArgsConstructor

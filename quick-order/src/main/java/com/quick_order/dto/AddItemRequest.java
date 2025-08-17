@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.dto;
 
 import com.quick_order.entity.Items;
@@ -14,7 +10,6 @@ import lombok.NoArgsConstructor;
  * @author viveksoni100
  *
  */
-
 @Data
 @Builder
 @NoArgsConstructor

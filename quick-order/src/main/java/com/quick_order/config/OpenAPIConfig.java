@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.config;
 
 import io.swagger.v3.oas.models.Components;
@@ -16,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
  * @author viveksoni100
  *
  */
-
 @Configuration
 public class OpenAPIConfig {
 

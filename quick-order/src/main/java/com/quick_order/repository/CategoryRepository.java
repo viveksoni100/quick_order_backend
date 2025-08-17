@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.repository;
 
 import com.quick_order.entity.Categories;
@@ -14,7 +10,6 @@ import java.util.List;
  * @author viveksoni100
  *
  */
-
 @Repository
 public interface CategoryRepository extends JpaRepository<Categories, Integer> {
 

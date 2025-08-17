@@ -1,7 +1,3 @@
-/**
- * @author viveksoni100
- *
- */
 package com.quick_order.config;
 
 import com.quick_order.entity.Role;
@@ -16,7 +12,6 @@ import org.springframework.stereotype.Component;
  * @author viveksoni100
  *
  */
-
 @Component
 @RequiredArgsConstructor
 public class DataInitializer {
