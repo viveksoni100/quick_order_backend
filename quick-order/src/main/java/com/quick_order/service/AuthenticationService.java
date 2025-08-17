@@ -10,12 +10,15 @@ import com.quick_order.dto.AuthenticationResponse;
 import com.quick_order.dto.RegisterRequest;
 import com.quick_order.entity.Role;
 import com.quick_order.entity.User;
+import com.quick_order.repository.MenuRepository;
 import com.quick_order.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +27,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final MenuRepository menuRepository;
 
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder()
@@ -49,9 +53,19 @@ public class AuthenticationService {
         var user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
+
+        AtomicReference<Integer> menuId = new AtomicReference<>();
+        AtomicReference<Integer> outletId = new AtomicReference<>();
+        menuRepository.findByUserId(user.getId()).ifPresent(menu -> {
+            menuId.set(menu.getId());
+            outletId.set(menu.getOutletId());
+        });
+
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .role(user.getRole().name())
+                .menuId(menuId.get())
+                .outletId(outletId.get())
                 .build();
     }
 }

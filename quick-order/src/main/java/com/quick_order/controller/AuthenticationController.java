@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author viveksoni100
- *
  */
 @RestController
 @RequestMapping("/api/auth")
