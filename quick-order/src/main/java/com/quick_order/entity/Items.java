@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Formula;
 
 /**
  * @author viveksoni100
@@ -22,6 +23,8 @@ public class Items {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer categoryId;
+    @Formula("(select c.name from categories c where c.id = category_id)")
+    private String category;
     private Integer menuId;
     private String name;
     private String description;
