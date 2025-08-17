@@ -9,7 +9,6 @@ import org.hibernate.annotations.Formula;
 
 /**
  * @author viveksoni100
- *
  */
 @Data
 @Builder

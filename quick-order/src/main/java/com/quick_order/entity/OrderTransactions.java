@@ -1,0 +1,43 @@
+package com.quick_order.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+/**
+ * @author viveksoni100
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "order_transactions")
+public class OrderTransactions {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String customerName;
+    private String customerPhone;
+    private String customerEmail;
+    private Double billAmount;
+    private Double tax;
+    private Double discountPerc;
+    private Double discountAmount;
+    private Double platformChargePerc;
+    private Double platformChargeAmount;
+    private Integer outletId;
+    private Integer orderQty;
+    private String preparationNotes;
+    private String status;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private String ipAddress;
+    private String device;
+
+}
