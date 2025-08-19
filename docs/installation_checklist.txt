@@ -4,3 +4,8 @@ Angular CLI: 17.0.7
 npm: 9.6.4
 
 database exports 
+
+XAMPP for Linux 8.2.4-0
+
+https://github.com/viveksoni100/quick_order_frontend.git
+https://github.com/viveksoni100/quick_order_backend.git
