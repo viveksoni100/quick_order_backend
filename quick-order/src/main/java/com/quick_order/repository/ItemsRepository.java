@@ -13,5 +13,6 @@ import java.util.List;
 public interface ItemsRepository extends JpaRepository<Items, Integer> {
 
     List<Items> findAllByMenuIdAndIsActiveTrue(Integer menuId);
+    List<Items> findAllByMenuId(Integer menuId);
 
 }

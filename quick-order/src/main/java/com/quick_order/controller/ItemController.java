@@ -41,7 +41,7 @@ public class ItemController {
             security = @SecurityRequirement(name = "bearerAuth")
     )
     public ResponseEntity<List<Items>> getAllByMenuId(@PathVariable Integer menuId) {
-        return ResponseEntity.ok(service.getAllByMenuId(menuId));
+        return ResponseEntity.ok(service.getAllByMenuId(menuId, Boolean.FALSE));
     }
 
     @GetMapping("/getById/{itemId}")

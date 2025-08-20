@@ -21,8 +21,12 @@ public class ItemService {
         return "Item added with id: " + savedItem.getId();
     }
 
-    public List<Items> getAllByMenuId(Integer menuId) {
-        return repository.findAllByMenuIdAndIsActiveTrue(menuId);
+    public List<Items> getAllByMenuId(Integer menuId, Boolean forMenuDisplay) {
+        if (forMenuDisplay) {
+            return repository.findAllByMenuIdAndIsActiveTrue(menuId);
+        } else {
+            return repository.findAllByMenuId(menuId);
+        }
     }
 
     public Items getById(Integer itemId) {

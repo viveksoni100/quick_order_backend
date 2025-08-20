@@ -27,7 +27,7 @@ public class OutletController {
             summary = "Get all items by menu id for outlet"
     )
     public ResponseEntity<List<Items>> getAllItemsByMenuId(@PathVariable Integer menuId) {
-        return ResponseEntity.ok(itemService.getAllByMenuId(menuId));
+        return ResponseEntity.ok(itemService.getAllByMenuId(menuId, Boolean.TRUE));
     }
 
 }
