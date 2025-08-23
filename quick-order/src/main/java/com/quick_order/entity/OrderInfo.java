@@ -31,15 +31,18 @@ public class OrderInfo {
     private Double discountAmount;
     private Double platformChargePerc;
     private Double platformChargeAmount;
-    private Double sgst;
-    private Double cgst;
     private Integer outletId;
     private Integer orderQty;
-    private String preparationNotes;
-    private String status;
+    private String preprationNotes;
+    private Integer status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private String ipAddress;
     private String device;
+    private Double sgstPerc;
+    private Double cgstPerc;
+    private Double sgstAmount;
+    private Double cgstAmount;
+    private Double roundOffAmount;
 
 }
