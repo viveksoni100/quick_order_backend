@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author viveksoni100
  */
@@ -16,15 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "order_transactions")
-public class OrderTransactions {
-
+@Table(name = "order_status")
+public class OrderStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transactionId;
-    private Long orderId;
-    private Integer status;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-
+    private Integer id;
+    private String status;
 }

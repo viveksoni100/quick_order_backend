@@ -31,6 +31,8 @@ public class OrderInfo {
     private Double discountAmount;
     private Double platformChargePerc;
     private Double platformChargeAmount;
+    private Double sgst;
+    private Double cgst;
     private Integer outletId;
     private Integer orderQty;
     private String preparationNotes;
