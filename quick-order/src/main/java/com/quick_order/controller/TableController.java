@@ -1,8 +1,8 @@
 package com.quick_order.controller;
 
-import com.quick_order.dto.AddCategoryRequest;
-import com.quick_order.entity.Categories;
-import com.quick_order.service.CategoryService;
+import com.quick_order.dto.AddTableRequest;
+import com.quick_order.entity.TableInfo;
+import com.quick_order.service.TableService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
@@ -16,65 +16,65 @@ import java.util.List;
  * @author viveksoni100
  */
 @RestController
-@RequestMapping("/api/category")
+@RequestMapping("/api/table")
 @RequiredArgsConstructor
-public class CategoryController {
+public class TableController {
 
-    private final CategoryService service;
+    private final TableService service;
 
     @PostMapping("/add")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
-            summary = "Add a new category",
+            summary = "Add a new Table",
             description = "Requires USER or ADMIN role.",
             security = @SecurityRequirement(name = "bearerAuth")
     )
-    public ResponseEntity<String> addItem(@RequestBody AddCategoryRequest request) {
-        return ResponseEntity.ok(service.addCategory(request));
+    public ResponseEntity<String> addTable(@RequestBody AddTableRequest request) {
+        return ResponseEntity.ok(service.addTable(request));
     }
 
-    @GetMapping("/getAllByMenuId/{menuId}")
+    @GetMapping("/getAllByOutletId/{outletId}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
-            summary = "Get all categories by menu id",
+            summary = "Get all Table by menu id",
             description = "Requires USER or ADMIN role.",
             security = @SecurityRequirement(name = "bearerAuth")
     )
-    public ResponseEntity<List<Categories>> getAllByMenuId(@PathVariable Integer menuId) {
-        return ResponseEntity.ok(service.getAllByMenuId(menuId));
+    public ResponseEntity<List<TableInfo>> getAllByOutletId(@PathVariable Integer outletId) {
+        return ResponseEntity.ok(service.getAllByOutletId(outletId));
     }
 
-    @GetMapping("/getById/{categoryId}")
+    @GetMapping("/getById/{tableId}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
-            summary = "Get a category by id",
+            summary = "Get a Table by id",
             description = "Requires USER or ADMIN role.",
             security = @SecurityRequirement(name = "bearerAuth")
     )
-    public ResponseEntity<Categories> getById(@PathVariable Integer categoryId) {
-        return ResponseEntity.ok(service.getById(categoryId));
+    public ResponseEntity<TableInfo> getById(@PathVariable Integer tableId) {
+        return ResponseEntity.ok(service.getById(tableId));
     }
 
-    @DeleteMapping("/removeById/{categoryId}")
+    @DeleteMapping("/removeById/{tableId}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
-            summary = "Remove a category by id",
+            summary = "Remove a Table by id",
             description = "Requires USER or ADMIN role.",
             security = @SecurityRequirement(name = "bearerAuth")
     )
-    public ResponseEntity<String> removeById(@PathVariable Integer categoryId) {
-        return ResponseEntity.ok(service.removeById(categoryId));
+    public ResponseEntity<String> removeById(@PathVariable Integer tableId) {
+        return ResponseEntity.ok(service.removeById(tableId));
     }
 
     @PatchMapping("/edit")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
-            summary = "Edit a category",
+            summary = "Edit a Table",
             description = "Requires USER or ADMIN role.",
             security = @SecurityRequirement(name = "bearerAuth")
     )
-    public ResponseEntity<String> editCategory(@RequestBody AddCategoryRequest request) {
-        return ResponseEntity.ok(service.editCategory(request));
+    public ResponseEntity<String> editTable(@RequestBody AddTableRequest request) {
+        return ResponseEntity.ok(service.editTable(request));
     }
 
 }
