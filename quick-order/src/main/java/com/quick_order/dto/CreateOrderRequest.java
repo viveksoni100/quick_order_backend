@@ -46,7 +46,11 @@ public class CreateOrderRequest {
     private List<OrderItems> orderItems;
 
     public OrderInfo mapToEntiry() {
-        return OrderInfo.builder().customerName(customerName).customerPhone(customerPhone).customerEmail(customerEmail).billAmount(billAmount).netPayableAmount(netPayableAmount).tax(tax).discountPerc(discountPerc).discountAmount(discountAmount).platformChargePerc(platformChargePerc).platformChargeAmount(platformChargeAmount).outletId(outletId).orderQty(orderQty).preparationNotes(preparationNotes).status(status).ipAddress(ipAddress).device(device).sgstPerc(sgstPerc).cgstPerc(cgstPerc).sgstAmount(sgstAmount).cgstAmount(cgstAmount).roundOffAmount(roundOffAmount).build();
+        return OrderInfo.builder().customerName(customerName).customerPhone(customerPhone).customerEmail(customerEmail).billAmount(billAmount)
+                .netPayableAmount(netPayableAmount).tax(tax).discountPerc(discountPerc).discountAmount(discountAmount).platformChargePerc(platformChargePerc)
+                .platformChargeAmount(platformChargeAmount).outletId(outletId).orderQty(orderQty).preparationNotes(preparationNotes).status(status)
+                .ipAddress(ipAddress).device(device).sgstPerc(sgstPerc).cgstPerc(cgstPerc).sgstAmount(sgstAmount).cgstAmount(cgstAmount)
+                .roundOffAmount(roundOffAmount).createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now()).build();
     }
 
 }

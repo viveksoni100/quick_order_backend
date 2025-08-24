@@ -1,6 +1,8 @@
 package com.quick_order.controller;
 
 import com.quick_order.entity.Items;
+import com.quick_order.entity.Outlet;
+import com.quick_order.repository.OutletRepository;
 import com.quick_order.service.ItemService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +23,7 @@ import java.util.List;
 public class OutletController {
 
     private final ItemService itemService;
+    private final OutletRepository outletRepository;
 
     @GetMapping("/getAllItemsByMenuId/{menuId}")
     @Operation(
@@ -28,6 +31,14 @@ public class OutletController {
     )
     public ResponseEntity<List<Items>> getAllItemsByMenuId(@PathVariable Integer menuId) {
         return ResponseEntity.ok(itemService.getAllByMenuId(menuId, Boolean.TRUE));
+    }
+
+    @GetMapping("/getOutletDetailsById/{outletId}")
+    @Operation(
+            summary = "Get outlet details by id"
+    )
+    public ResponseEntity<Outlet> getOutletDetailsById(@PathVariable Long outletId) {
+        return ResponseEntity.ok(outletRepository.findById(outletId).isPresent() ? outletRepository.findById(outletId).get() : null);
     }
 
 }
