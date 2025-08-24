@@ -1,6 +1,5 @@
 package com.quick_order.controller;
 
-import com.quick_order.dto.AddItemRequest;
 import com.quick_order.dto.CreateOrderRequest;
 import com.quick_order.service.OrderService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,14 +22,25 @@ public class OrderController {
 
     private final OrderService service;
 
-    @PostMapping("/create")
+    @PostMapping("/new")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @Operation(
-            summary = "Place an Order",
+            summary = "Place an Order on BackEnd",
             description = "Requires USER or ADMIN role.",
             security = @SecurityRequirement(name = "bearerAuth")
     )
-    public ResponseEntity<String> createAnOrder(@RequestBody CreateOrderRequest request) throws Exception {
+    public ResponseEntity<String> createAnOrderBE(@RequestBody CreateOrderRequest request) throws Exception {
+        return ResponseEntity.ok(service.createAnOrderWithCalculation(request));
+    }
+
+    @PostMapping("/create")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    @Operation(
+            summary = "Place an Order on FrontEnd",
+            description = "Requires USER or ADMIN role.",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
+    public ResponseEntity<String> createAnOrderFE(@RequestBody CreateOrderRequest request) throws Exception {
         return ResponseEntity.ok(service.createAnOrder(request));
     }
 }

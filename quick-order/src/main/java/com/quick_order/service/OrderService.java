@@ -25,7 +25,7 @@ public class OrderService {
     private final OutletRepository outletRepository;
     private final OrderItemsRepository orderItemsRepository;
 
-    public String createAnOrder(CreateOrderRequest request) throws Exception {
+    public String createAnOrderWithCalculation(CreateOrderRequest request) throws Exception {
         OrderInfo order = new OrderInfo();
         Double billAmount = request.getBillAmount();
         Double netPayableAmount = 0.0;
@@ -98,5 +98,11 @@ public class OrderService {
      */
     private double doTheRoundOff(Double netPayableAmount) {
         return Math.round(netPayableAmount);
+    }
+
+    public String createAnOrder(CreateOrderRequest request) {
+        OrderInfo createdOrder = orderRepository.save(request.mapToEntiry());
+        saveOrderItems(request.getOrderItems(), createdOrder.getId());
+        return "Order is placed, you're order id is: " + createdOrder.getId();
     }
 }
