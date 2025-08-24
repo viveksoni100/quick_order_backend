@@ -26,6 +26,7 @@ public class OrderInfo {
     private String customerPhone;
     private String customerEmail;
     private Double billAmount;
+    private Double netPayableAmount;
     private Double tax;
     private Double discountPerc;
     private Double discountAmount;

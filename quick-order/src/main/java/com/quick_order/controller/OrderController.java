@@ -30,7 +30,7 @@ public class OrderController {
             description = "Requires USER or ADMIN role.",
             security = @SecurityRequirement(name = "bearerAuth")
     )
-    public ResponseEntity<String> createAnOrder(@RequestBody CreateOrderRequest request) {
+    public ResponseEntity<String> createAnOrder(@RequestBody CreateOrderRequest request) throws Exception {
         return ResponseEntity.ok(service.createAnOrder(request));
     }
 }
