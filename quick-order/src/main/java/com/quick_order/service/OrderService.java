@@ -2,13 +2,16 @@ package com.quick_order.service;
 
 import com.quick_order.dto.CreateOrderRequest;
 import com.quick_order.entity.OrderInfo;
+import com.quick_order.entity.OrderItems;
 import com.quick_order.entity.Outlet;
 import com.quick_order.enums.OrderStatusEnum;
 import com.quick_order.repository.OrderInfoRepository;
+import com.quick_order.repository.OrderItemsRepository;
 import com.quick_order.repository.OutletRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -20,6 +23,7 @@ public class OrderService {
 
     private final OrderInfoRepository orderRepository;
     private final OutletRepository outletRepository;
+    private final OrderItemsRepository orderItemsRepository;
 
     public String createAnOrder(CreateOrderRequest request) throws Exception {
         OrderInfo order = new OrderInfo();
@@ -74,7 +78,17 @@ public class OrderService {
         order.setDevice(request.getDevice());
 
         OrderInfo createdOrder = orderRepository.save(order);
+
+        saveOrderItems(request.getOrderItems(), createdOrder.getId());
+
         return "Order is placed, you're order id is: " + createdOrder.getId();
+    }
+
+    private void saveOrderItems(List<OrderItems> orderItems, long orderId) {
+        orderItems.stream().forEach(item -> {
+            item.setOrderId(orderId);
+        });
+        orderItemsRepository.saveAll(orderItems);
     }
 
     /**

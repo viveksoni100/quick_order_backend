@@ -1,11 +1,13 @@
 package com.quick_order.dto;
 
+import com.quick_order.entity.OrderItems;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author viveksoni100
@@ -38,5 +40,7 @@ public class CreateOrderRequest {
     private Double sgstAmount;
     private Double cgstAmount;
     private Double roundOffAmount;
+
+    private List<OrderItems> orderItems;
 
 }
