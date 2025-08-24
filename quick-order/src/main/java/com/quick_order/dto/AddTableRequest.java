@@ -1,6 +1,5 @@
 package com.quick_order.dto;
 
-import com.quick_order.entity.Categories;
 import com.quick_order.entity.TableInfo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,9 +15,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AddTableRequest {
 
-    private Integer id;
+    private Long id;
     private String tableNo;
-    private Integer outletId;
+    private Long outletId;
     private Integer sittingCapacity;
 
     public TableInfo mapToEntity() {

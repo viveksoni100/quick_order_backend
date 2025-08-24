@@ -19,7 +19,7 @@ public class Outlet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private Long userId;
     private String name;
     private String address;

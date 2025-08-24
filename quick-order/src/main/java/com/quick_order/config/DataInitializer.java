@@ -1,6 +1,6 @@
 package com.quick_order.config;
 
-import com.quick_order.entity.Role;
+import com.quick_order.enums.Role;
 import com.quick_order.entity.User;
 import com.quick_order.repository.UserRepository;
 import jakarta.annotation.PostConstruct;

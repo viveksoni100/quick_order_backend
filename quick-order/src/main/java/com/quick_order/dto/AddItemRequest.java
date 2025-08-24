@@ -18,7 +18,7 @@ import com.quick_order.utility.Constants;
 @AllArgsConstructor
 public class AddItemRequest {
 
-    private Integer id;
+    private Long id;
     private Integer categoryId;
     private Integer menuId;
     private String name;

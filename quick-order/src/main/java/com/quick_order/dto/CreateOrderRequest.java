@@ -25,7 +25,7 @@ public class CreateOrderRequest {
     private Double discountAmount;
     private Double platformChargePerc;
     private Double platformChargeAmount;
-    private Integer outletId;
+    private Long outletId;
     private Integer orderQty;
     private String preparationNotes;
     private Integer status;

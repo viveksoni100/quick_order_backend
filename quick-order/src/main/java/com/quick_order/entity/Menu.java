@@ -19,9 +19,9 @@ public class Menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private Long userId;
-    private Integer outletId;
+    private Long outletId;
     private String name;
 
 }

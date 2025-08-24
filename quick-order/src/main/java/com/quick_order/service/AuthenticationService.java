@@ -8,7 +8,7 @@ import com.quick_order.config.JwtService;
 import com.quick_order.dto.AuthenticationRequest;
 import com.quick_order.dto.AuthenticationResponse;
 import com.quick_order.dto.RegisterRequest;
-import com.quick_order.entity.Role;
+import com.quick_order.enums.Role;
 import com.quick_order.entity.User;
 import com.quick_order.repository.MenuRepository;
 import com.quick_order.repository.UserRepository;
@@ -54,8 +54,8 @@ public class AuthenticationService {
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
 
-        AtomicReference<Integer> menuId = new AtomicReference<>();
-        AtomicReference<Integer> outletId = new AtomicReference<>();
+        AtomicReference<Long> menuId = new AtomicReference<>();
+        AtomicReference<Long> outletId = new AtomicReference<>();
         menuRepository.findByUserId(user.getId()).ifPresent(menu -> {
             menuId.set(menu.getId());
             outletId.set(menu.getOutletId());

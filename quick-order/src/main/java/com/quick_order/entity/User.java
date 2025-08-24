@@ -1,5 +1,6 @@
 package com.quick_order.entity;
 
+import com.quick_order.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

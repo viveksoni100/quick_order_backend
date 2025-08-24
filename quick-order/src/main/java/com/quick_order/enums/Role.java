@@ -1,4 +1,4 @@
-package com.quick_order.entity;
+package com.quick_order.enums;
 
 /**
  * @author viveksoni100

@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AddCategoryRequest {
 
-    private Integer id;
+    private Long id;
     private Integer menuId;
     private String name;
 

@@ -20,7 +20,7 @@ public class Items {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private Integer categoryId;
     @Formula("(select c.name from categories c where c.id = category_id)")
     private String category;
