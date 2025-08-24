@@ -1,6 +1,5 @@
-package com.quick_order.entity;
+package com.quick_order.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,13 +14,8 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "order_info")
-public class OrderInfo {
+public class CreateOrderRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String customerName;
     private String customerPhone;
     private String customerEmail;
