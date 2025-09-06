@@ -45,5 +45,6 @@ public class OrderInfo {
     private Double sgstAmount;
     private Double cgstAmount;
     private Double roundOffAmount;
+    private Long tableId;
 
 }

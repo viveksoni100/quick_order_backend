@@ -42,6 +42,7 @@ public class CreateOrderRequest {
     private Double sgstAmount;
     private Double cgstAmount;
     private Double roundOffAmount;
+    private Long tableId;
 
     private List<OrderItems> orderItems;
 
@@ -50,7 +51,7 @@ public class CreateOrderRequest {
                 .netPayableAmount(netPayableAmount).tax(tax).discountPerc(discountPerc).discountAmount(discountAmount).platformChargePerc(platformChargePerc)
                 .platformChargeAmount(platformChargeAmount).outletId(outletId).orderQty(orderQty).preparationNotes(preparationNotes).status(status)
                 .ipAddress(ipAddress).device(device).sgstPerc(sgstPerc).cgstPerc(cgstPerc).sgstAmount(sgstAmount).cgstAmount(cgstAmount)
-                .roundOffAmount(roundOffAmount).createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now()).build();
+                .roundOffAmount(roundOffAmount).createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now()).tableId(tableId).build();
     }
 
 }
